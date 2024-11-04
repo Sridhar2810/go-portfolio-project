@@ -127,17 +127,17 @@ jobs:
           git push
 
       
-  Slack-Notification:
+ # Slack-Notification:
 
-      runs-on: ubuntu-latest
-      needs: [build, Code-Quality, Docker-Image-Push, Image-Scanning, Updating-helm-tags]
-      steps:
+      #runs-on: ubuntu-latest
+      #needs: [build, Code-Quality, Docker-Image-Push, Image-Scanning, Updating-helm-tags]
+      #steps:
       
-      - name: Slack Notification
-        uses: act10ns/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#go-app-github-actions'
-        if: always()
+      #- name: Slack Notification
+      #  uses: act10ns/slack@v1
+       # with:
+        #  status: ${{ job.status }}
+        #  steps: ${{ toJson(steps) }}
+         # channel: '#go-app-github-actions'
+      #  if: always()
 
