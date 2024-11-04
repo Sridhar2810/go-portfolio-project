@@ -23,10 +23,10 @@ jobs:
 
     - name: Setting Up Go 1.22
       uses: actions/setup-go@v2
-      with: 
+      with:
         go-version: 1.22
 
-    - name: Build 
+    - name: Build
       run: go build -o go-app
 
     - name: Test
@@ -46,7 +46,7 @@ jobs:
       with:
         version: v1.56.2
         
-  Docker-Image-Push: 
+  Docker-Image-Push:
     runs-on: ubuntu-latest
 
     needs: Code-Quality
@@ -118,8 +118,8 @@ jobs:
       - name: Pushing changes
         run: |
           cd go-app-devops
-          git config --global user.email "aman07pathak@gmail.com"
-          git config --global user.name "AmanPathak-DevOps"
+          git config --global user.email "sridhara2810@gmail.com"
+          git config --global user.name "Sridhar2810"
           git add values.yaml
           git commit -am "Updated values.yaml file"
           git push || true
